@@ -12,3 +12,19 @@ export default boot(({ app }) => {
   // Set i18n instance on app
   app.use(i18n);
 });
+
+export type LocalizationInfo = {
+  title: string,
+  value: string,
+}
+
+export const locales:LocalizationInfo[] = [
+  {
+    title: 'English',
+    value: 'en',
+  },
+  {
+    title: 'Русский',
+    value: 'ru',
+  },
+];

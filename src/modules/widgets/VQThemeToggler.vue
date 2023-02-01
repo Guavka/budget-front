@@ -18,6 +18,7 @@ const props = withDefaults(defineProps<ThemeTogglerProps>(), {
   size: 'large',
 });
 
+const $q = useQuasar();
 const theme = useTheme();
 
 const themeName = ref(theme.global.name);
@@ -26,12 +27,11 @@ const icon = computed(() => (themeName.value === 'light' ? props.lightThemeIcon 
 function toggleTheme() {
   themeName.value = theme.global.current.value.dark ? 'light' : 'dark';
 
-  const $q = useQuasar();
   $q.cookies.set('theme', String(themeName.value));
 }
 
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
 
 </style>

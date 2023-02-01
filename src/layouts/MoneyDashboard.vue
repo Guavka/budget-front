@@ -11,7 +11,9 @@
       <v-app-bar-title>{{ $t('header.title') }}</v-app-bar-title>
       <v-spacer></v-spacer>
 
-      <v-theme-toggler></v-theme-toggler>
+      <v-q-theme-toggler></v-q-theme-toggler>
+      <v-q-locale-toggler :localization-data="locales"></v-q-locale-toggler>
+
     </v-app-bar>
     <v-navigation-drawer color="grey-darken-2" permanent></v-navigation-drawer>
     <v-main>
@@ -23,5 +25,6 @@
 </template>
 
 <script setup lang="ts">
+import { locales } from 'boot/i18n';
 
 </script>
