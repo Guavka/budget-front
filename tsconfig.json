@@ -1,0 +1,25 @@
+{
+  "extends": "@quasar/app-vite/tsconfig-preset",
+  "compilerOptions": {
+    "baseUrl": ".",
+    "lib": [
+      "DOM.Iterable"
+    ],
+    "types": [
+      "vitest",
+      "vite/client",
+      "vue/ref-macros"
+    ],
+    "paths": {
+      "modules/*": [
+        "src/modules/*"
+      ],
+      "boot/*": [
+        "src/boot/*"
+      ]
+    }
+  },
+  "exclude": [
+    "cypress"
+  ]
+}
