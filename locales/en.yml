@@ -1,3 +1,7 @@
+accountMenu:
+  edit: Edit profile
+  logout: Log out
 header:
   title: Dashboard
   locale: Select translate
+

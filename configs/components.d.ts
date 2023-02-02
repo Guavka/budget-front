@@ -7,11 +7,10 @@ export {}
 
 declare module '@vue/runtime-core' {
   export interface GlobalComponents {
-    LocaleSwitcher: typeof import('./../src/modules/widgets/LocaleSwitcher.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
-    VQLocaleToggler: typeof import('./../src/modules/widgets/VQLocaleToggler.vue')['default']
-    VQThemeToggler: typeof import('./../src/modules/widgets/VQThemeToggler.vue')['default']
-    VThemeToggler: typeof import('./../src/modules/widgets/VThemeToggler.vue')['default']
+    VAccountWidget: typeof import('./../src/modules/widgets/VAccountWidget.vue')['default']
+    VQLocaleTogglerWidget: typeof import('./../src/modules/widgets/VQLocaleTogglerWidget.vue')['default']
+    VQThemeTogglerWidget: typeof import('./../src/modules/widgets/VQThemeTogglerWidget.vue')['default']
   }
 }

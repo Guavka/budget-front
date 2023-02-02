@@ -9,10 +9,10 @@
       </template>
 
       <v-app-bar-title>{{ $t('header.title') }}</v-app-bar-title>
-      <v-spacer></v-spacer>
 
-      <v-q-theme-toggler></v-q-theme-toggler>
-      <v-q-locale-toggler :localization-data="locales"></v-q-locale-toggler>
+      <v-q-theme-toggler-widget class="me-auto"></v-q-theme-toggler-widget>
+      <v-q-locale-toggler-widget :data="locales"></v-q-locale-toggler-widget>
+      <v-account-widget :user-data="userData"></v-account-widget>
 
     </v-app-bar>
     <v-navigation-drawer color="grey-darken-2" permanent></v-navigation-drawer>
@@ -26,5 +26,11 @@
 
 <script setup lang="ts">
 import { locales } from 'boot/i18n';
+import { AccountMenuData } from 'modules/widgets/types';
 
+const userData: AccountMenuData = {
+  initials: 'JD',
+  fullName: 'Dmitryy Vasiliev-Petrov',
+  email: 'john.doe@doe.com',
+};
 </script>

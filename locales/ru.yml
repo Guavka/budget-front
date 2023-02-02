@@ -1,3 +1,6 @@
+accountMenu:
+  edit: Редактировать профиль
+  logout: Выйти
 header:
   title: Информация
   locale: Выбор языка
