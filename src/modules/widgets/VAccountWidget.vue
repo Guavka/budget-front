@@ -18,11 +18,11 @@
             {{ userData.email }}
           </p>
           <v-divider class="my-3"></v-divider>
-          <v-btn rounded variant="text" prepend-icon="mdi-clipboard-account-outline">
+          <v-btn rounded variant="text" prepend-icon="mdi-clipboard-account-outline" to="/user">
             {{ $t('accountMenu.edit') }}
           </v-btn>
           <v-divider class="my-3"></v-divider>
-          <v-btn rounded variant="text" prepend-icon="mdi-logout-variant">
+          <v-btn rounded variant="text" prepend-icon="mdi-logout-variant" to="/logout">
             {{ $t('accountMenu.logout') }}
           </v-btn>
         </div>
