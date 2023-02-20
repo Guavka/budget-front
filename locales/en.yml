@@ -4,4 +4,9 @@ accountMenu:
 header:
   title: Dashboard
   locale: Select translate
-
+footer:
+  scores: Scores
+  operations: Operations
+  stats: Stats
+money:
+  name: Balance

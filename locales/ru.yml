@@ -4,3 +4,9 @@ accountMenu:
 header:
   title: Информация
   locale: Выбор языка
+footer:
+  scores: Счета
+  operations: Операции
+  stats: Статистика
+money:
+  name: Баланс
