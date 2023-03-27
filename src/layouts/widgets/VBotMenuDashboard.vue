@@ -1,5 +1,5 @@
 <template>
-  <v-bottom-navigation :elevation="4" grow>
+  <v-bottom-navigation elevation="4" grow>
     <v-btn to="/scores">
       <v-icon>mdi-safe</v-icon>
       {{ $t('footer.scores') }}

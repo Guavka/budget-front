@@ -29,7 +29,6 @@
       </v-card-text>
     </v-card>
   </v-menu>
-
 </template>
 
 <script setup lang="ts">
@@ -42,11 +41,9 @@ export interface AccountWidgetProps {
 }
 
 withDefaults(defineProps<AccountWidgetProps>(), {
-  size: 'large',
+  size: 'small',
 });
 
 </script>
 
-<style lang="scss" scoped>
-
-</style>
+<style lang="scss" scoped></style>

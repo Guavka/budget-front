@@ -1,7 +1,7 @@
 <template>
   <v-menu>
     <template v-slot:activator="{ props }">
-      <v-btn :icon="icon" v-bind="props" :size="size">
+      <v-btn :icon="icon" v-bind="props" :size="size" class="me-1">
       </v-btn>
     </template>
     <v-list>
@@ -11,7 +11,6 @@
       </v-list-item>
     </v-list>
   </v-menu>
-
 </template>
 
 <script setup lang="ts">
@@ -26,7 +25,7 @@ export interface LocaleTogglerProps {
 
 withDefaults(defineProps<LocaleTogglerProps>(), {
   icon: 'mdi-translate',
-  size: 'large',
+  size: 'small',
 });
 
 const $q = useQuasar();
@@ -39,6 +38,4 @@ const selectLocale = (newLocale: string) => {
 
 </script>
 
-<style lang="scss" scoped>
-
-</style>
+<style lang="scss" scoped></style>

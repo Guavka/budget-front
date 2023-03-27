@@ -1,9 +1,9 @@
 <template>
-  <q-page class="mx-auto pa-2">
-    <div>
+  <q-page>
+    <v-layout>
       {{ $t('money.name') }}: {{ balance }} {{ currency }}
       <v-scores-widget :scores-data="scoreDataMock"></v-scores-widget>
-    </div>
+    </v-layout>
   </q-page>
 </template>
 

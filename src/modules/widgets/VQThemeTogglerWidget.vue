@@ -1,5 +1,6 @@
 <template>
-  <v-btn :icon="icon" @click="toggleTheme" :size="size"></v-btn>
+  <v-btn :icon="icon" @click="toggleTheme" :size="size">
+  </v-btn>
 </template>
 
 <script setup lang="ts">
@@ -15,7 +16,7 @@ export interface ThemeTogglerProps {
 const props = withDefaults(defineProps<ThemeTogglerProps>(), {
   lightThemeIcon: 'mdi-weather-sunny',
   darkThemeIcon: 'mdi-weather-night',
-  size: 'large',
+  size: 'small',
 });
 
 const $q = useQuasar();
@@ -32,6 +33,4 @@ function toggleTheme() {
 
 </script>
 
-<style lang="scss" scoped>
-
-</style>
+<style lang="scss" scoped></style>

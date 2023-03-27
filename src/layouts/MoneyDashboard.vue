@@ -1,14 +1,14 @@
 <template>
-  <q-layout>
-    <v-layout>
-      <v-app-bar-dashboard />
-      <v-main>
-        <q-page-container>
-          <router-view />
-        </q-page-container>
-      </v-main>
-      <v-bot-menu-dashboard />
-    </v-layout>
+  <q-layout view="hHh lpR fFf" container>
+    <q-header>
+      <q-toolbar>
+        <v-app-bar-dashboard />
+      </q-toolbar>
+    </q-header>
+    <q-page-container>
+      <router-view />
+    </q-page-container>
+    <v-bot-menu-dashboard />
   </q-layout>
 </template>
 
