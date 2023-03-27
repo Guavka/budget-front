@@ -1,6 +1,6 @@
 <template>
-  <q-layout view="hHh lpR fFf" container>
-    <q-header>
+  <q-layout container view="hHh lpR fFf">
+    <q-header elevated>
       <q-toolbar>
         <v-app-bar-dashboard />
       </q-toolbar>

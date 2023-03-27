@@ -1,7 +1,8 @@
 <template>
-  <div class="title me-auto">
+  <div class="me-auto text-h5">
     {{ $t('header.title') }}
   </div>
+
   <v-q-theme-toggler-widget class="me-1"></v-q-theme-toggler-widget>
   <v-q-locale-toggler-widget :data="locales"></v-q-locale-toggler-widget>
   <v-account-widget :user-data="userData"></v-account-widget>
