@@ -1,18 +1,17 @@
 <template>
-  <q-layout container view="hHh lpR fFf">
-    <q-header elevated>
-      <q-toolbar>
-        <v-app-bar-dashboard />
-      </q-toolbar>
-    </q-header>
-    <q-page-container>
-      <router-view />
-    </q-page-container>
-    <v-bot-menu-dashboard />
-  </q-layout>
+  <v-app-bar-dashboard />
+  <v-main class="main">
+    <router-view />
+  </v-main>
+  <v-bot-menu-dashboard />
 </template>
 
 <script setup lang="ts">
 </script>
 
-<style scoped lang="scss"></style>
+<style scoped lang="scss">
+.main {
+  height: 100vh;
+  overflow-y: scroll;
+}
+</style>

@@ -1,9 +1,5 @@
 <template>
-  <div>
-    <q-page class="row items-center justify-evenly">
-      Operations
-    </q-page>
-  </div>
+  Operations
 </template>
 
 <script setup lang="ts">

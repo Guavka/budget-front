@@ -1,10 +1,6 @@
 <template>
-  <q-page>
-    <v-layout>
-      {{ $t('money.name') }}: {{ balance }} {{ currency }}
-      <v-scores-widget :scores-data="scoreDataMock"></v-scores-widget>
-    </v-layout>
-  </q-page>
+  {{ $t('money.name') }}: {{ balance }} {{ currency }}
+  <v-scores-widget :scores-data="scoreDataMock"></v-scores-widget>
 </template>
 
 <script setup lang="ts">
