@@ -6,7 +6,7 @@
     </template>
     <v-list>
       <v-list-subheader>{{ $t('header.locale') }}</v-list-subheader>
-      <v-list-item v-for="(item, index) in data" :key="index" :value="index" @click="() => selectLocale(item.value)">
+      <v-list-item v-for="(item, index) in locales" :key="index" :value="index" @click="() => selectLocale(item.value)">
         <v-list-item-title>{{ item.title }}</v-list-item-title>
       </v-list-item>
     </v-list>
@@ -14,11 +14,10 @@
 </template>
 
 <script setup lang="ts">
-import { LocalizationInfo } from 'boot/i18n';
+import { locales } from 'boot/i18n';
 import { VButtonsSize } from './types';
 
 export interface LocaleTogglerProps {
-  data: LocalizationInfo[],
   icon?: string,
   size?: VButtonsSize,
 }
@@ -37,5 +36,3 @@ const selectLocale = (newLocale: string) => {
 };
 
 </script>
-
-<style lang="scss" scoped></style>

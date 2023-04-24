@@ -4,6 +4,7 @@ interface ImportMetaEnv {
   readonly VITE_BASE_URL: string
   readonly VITE_TITLE: string
   readonly VITE_SHORT_TITLE: string
+  readonly VITE_IS_MOCK: boolean
 }
 
 interface ImportMeta {

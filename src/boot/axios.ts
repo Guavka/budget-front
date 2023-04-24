@@ -14,8 +14,9 @@ declare module '@vue/runtime-core' {
 // "export default () => {}" function below (which runs individually
 // for each client)
 
+const api = axios.create({ baseURL: import.meta.env.VITE_BASE_URL, params: {} });
+
 export default boot(({ app }) => {
-  const api = axios.create({ baseURL: import.meta.env.VITE_BASE_URL, params: {} });
   // for use inside Vue files (Options API) through this.$axios and this.$api
 
   app.config.globalProperties.$axios = axios;
@@ -26,3 +27,30 @@ export default boot(({ app }) => {
   // ^ ^ ^ this will allow you to use this.$api (for Vue Options API form)
   //       so you can easily perform requests against your app's API
 });
+
+export interface RequestSettings {
+  url?: string,
+  params: any
+}
+
+export async function getRequest(settings: RequestSettings) {
+  try {
+    const { url = '', params } = settings;
+    const response = await axios.get(url, { params });
+    return response.data;
+  } catch (e) {
+    if (e instanceof Error) { throw new Error(`get request\n${e.message}`); }
+    return null;
+  }
+}
+
+export async function postRequest(settings: RequestSettings) {
+  try {
+    const { url = '', params } = settings;
+    const response = await axios.post(url, { params });
+    return response.data;
+  } catch (e) {
+    if (e instanceof Error) { throw new Error(`post request\n${e.message}`); }
+    return null;
+  }
+}

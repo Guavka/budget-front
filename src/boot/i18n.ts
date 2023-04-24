@@ -2,6 +2,11 @@ import { boot } from 'quasar/wrappers';
 import { createI18n } from 'vue-i18n';
 import { messages } from '../../locales';
 
+interface LocalizationInfo {
+  title: string,
+  value: string,
+}
+
 export default boot(({ app }) => {
   const i18n = createI18n({
     legacy: false,
@@ -13,12 +18,7 @@ export default boot(({ app }) => {
   app.use(i18n);
 });
 
-export type LocalizationInfo = {
-  title: string,
-  value: string,
-}
-
-export const locales:LocalizationInfo[] = [
+export const locales: LocalizationInfo[] = [
   {
     title: 'English',
     value: 'en',

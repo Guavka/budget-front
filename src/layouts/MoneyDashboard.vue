@@ -7,11 +7,16 @@
 </template>
 
 <script setup lang="ts">
+import { useUserStore } from 'stores/user';
+
+const store = useUserStore();
+console.log(store.getUserData('123', '123'));
+
 </script>
 
 <style scoped lang="scss">
 .main {
-  height: 100vh;
+  height: 100svh;
   overflow-y: scroll;
 }
 </style>
