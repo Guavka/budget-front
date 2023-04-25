@@ -1,6 +1,6 @@
-import MoneyDashboardApi from 'modules/api/api';
-import MockMoneyDashboardApi from 'modules/api/mockApi';
-import { UserModel } from 'modules/api/types/models/userModel';
+import MoneyDashboardApi from 'modules/api/dashboard/dashBoardApi';
+import MockMoneyDashboardApi from 'modules/api/dashboard/dashBoardMockApi';
+import { UserModel } from 'modules/api/dashboard/types/models/userModel';
 
 const stateData = {
   userData: <UserModel>{},
@@ -15,7 +15,7 @@ export const useUserStore = defineStore('user', {
   actions: {
     async getUserData(email: string, password: string) {
       if (this.isMock) {
-        this.userData = await MockMoneyDashboardApi.getUserData();
+        this.userData = await MockMoneyDashboardApi.getUserData({ email, password });
       } else {
         this.userData = await MoneyDashboardApi.getUserData({ email, password });
       }

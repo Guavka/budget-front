@@ -1,4 +1,4 @@
-import Parser from 'modules/api/parser';
+import Validator from 'modules/utils/validator';
 import { CategoryDataResponse, OperationDataResponse } from '../dashResponse';
 import { CategoryModel } from './categoryModel';
 import { OperationType } from '.';
@@ -23,7 +23,7 @@ export class OperationModel {
   }
 
   public set scoreId(value: string) {
-    this._scoreId = Parser.GetValidPositiveInt(value, 'ScoreId');
+    this._scoreId = Validator.GetValidPositiveInt(value, 'ScoreId');
   }
 
   public get category(): CategoryModel {
@@ -47,7 +47,7 @@ export class OperationModel {
   }
 
   public set moneyValue(value: string) {
-    this._moneyValue = Parser.GetValidNumber(value, 'moneyValue');
+    this._moneyValue = Validator.GetValidNumber(value, 'moneyValue');
   }
 
   public get date(): Date {
@@ -55,7 +55,7 @@ export class OperationModel {
   }
 
   public set date(value: string) {
-    this._date = Parser.GetValidDate(value, 'Date');
+    this._date = Validator.GetValidDate(value, 'Date');
   }
 
   public get place(): string {
@@ -63,7 +63,7 @@ export class OperationModel {
   }
 
   public set place(value: string) {
-    this._place = Parser.GetValidString(value, 'Place');
+    this._place = Validator.GetValidString(value, 'Place');
   }
 
   public get comment(): string {
@@ -71,7 +71,7 @@ export class OperationModel {
   }
 
   public set comment(value: string) {
-    this._comment = Parser.GetValidString(value, 'Comment');
+    this._comment = Validator.GetValidString(value, 'Comment');
   }
 
   constructor(settings: OperationDataResponse) {

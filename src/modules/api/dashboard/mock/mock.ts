@@ -1,5 +1,5 @@
 import {
-  CategoryDataResponse, OperationDataResponse, PlanDataResponse, ScoreDataResponse, UserDataResponse,
+  CategoryDataResponse, OperationDataResponse, ScoreDataResponse, PlanDataResponse, UserDataResponse,
 } from '../types/dashResponse';
 
 const salaryCategory: CategoryDataResponse = {

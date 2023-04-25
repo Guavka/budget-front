@@ -1,5 +1,5 @@
 import { getRequest } from 'boot/axios';
-import { UserParams } from './types/dashApiSettings';
+import { UserParams } from '../authorization/authorizationsSettings';
 import { UserModel } from './types/models/userModel';
 
 export default class MoneyDashboardApi {

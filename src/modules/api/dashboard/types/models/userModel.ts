@@ -1,4 +1,4 @@
-import Parser from 'modules/api/parser';
+import Validator from 'modules/utils/validator';
 import { PlanDataResponse, ScoreDataResponse, UserDataResponse } from '../dashResponse';
 import { ScoreModel } from './scoreModel';
 import { PlanModel } from './planModel';
@@ -23,7 +23,7 @@ export class UserModel {
   }
 
   public set id(value: string) {
-    this._id = Parser.GetValidPositiveInt(value, 'ID');
+    this._id = Validator.GetValidPositiveInt(value, 'ID');
   }
 
   public get plan(): PlanModel {
@@ -39,7 +39,7 @@ export class UserModel {
   }
 
   public set firstName(value: string) {
-    this._firstName = Parser.GetValidString(value, 'FirstName');
+    this._firstName = Validator.GetValidString(value, 'FirstName');
   }
 
   public get lastName(): string {
@@ -47,7 +47,7 @@ export class UserModel {
   }
 
   public set lastName(value: string) {
-    this._lastName = Parser.GetValidString(value, 'LastName');
+    this._lastName = Validator.GetValidString(value, 'LastName');
   }
 
   public get age(): number {
@@ -55,7 +55,7 @@ export class UserModel {
   }
 
   public set age(value: string) {
-    this._age = Parser.GetValidPositiveInt(value, 'Age');
+    this._age = Validator.GetValidPositiveInt(value, 'Age');
   }
 
   public get email(): string {
@@ -63,7 +63,7 @@ export class UserModel {
   }
 
   public set email(value: string) {
-    this._email = Parser.GetValidEmailStr(value, 'Email');
+    this._email = Validator.GetValidEmailStr(value, 'Email');
   }
 
   public get scores(): ScoreModel[] {

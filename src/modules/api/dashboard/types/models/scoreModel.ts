@@ -1,4 +1,4 @@
-import Parser from 'modules/api/parser';
+import Validator from 'modules/utils/validator';
 import { OperationDataResponse, ScoreDataResponse } from '../dashResponse';
 import { CurrencyType, ScoreType } from '.';
 import { OperationModel } from './operationModel';
@@ -19,7 +19,7 @@ export class ScoreModel {
   }
 
   public set name(value: string) {
-    this._name = Parser.GetValidString(value, 'Name');
+    this._name = Validator.GetValidString(value, 'Name');
   }
 
   public get type(): ScoreType {
@@ -43,7 +43,7 @@ export class ScoreModel {
   }
 
   public set moneyValue(value: string) {
-    this._moneyValue = Parser.GetValidNumber(value, 'moneyValue');
+    this._moneyValue = Validator.GetValidNumber(value, 'moneyValue');
   }
 
   public get operations(): OperationModel[] {

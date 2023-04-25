@@ -1,4 +1,4 @@
-import Parser from 'modules/api/parser';
+import Validator from 'modules/utils/validator';
 import { PlanDataResponse } from '../dashResponse';
 
 export class PlanModel {
@@ -13,7 +13,7 @@ export class PlanModel {
   }
 
   public set name(value: string) {
-    this._name = Parser.GetValidString(value, 'Name');
+    this._name = Validator.GetValidString(value, 'Name');
   }
 
   public get duration(): number {
@@ -21,7 +21,7 @@ export class PlanModel {
   }
 
   public set duration(value: string) {
-    this._duration = Parser.GetValidPositiveInt(value, 'Duration');
+    this._duration = Validator.GetValidPositiveInt(value, 'Duration');
   }
 
   public get cost(): number {
@@ -29,7 +29,7 @@ export class PlanModel {
   }
 
   public set cost(value: string) {
-    this._cost = Parser.GetValidPositiveFloat(value, 'Cost');
+    this._cost = Validator.GetValidPositiveFloat(value, 'Cost');
   }
 
   constructor(settings: PlanDataResponse) {

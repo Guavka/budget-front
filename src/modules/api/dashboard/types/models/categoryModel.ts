@@ -1,4 +1,4 @@
-import Parser from 'modules/api/parser';
+import Validator from 'modules/utils/validator';
 import { CategoryDataResponse } from '../dashResponse';
 
 export class CategoryModel {
@@ -11,7 +11,7 @@ export class CategoryModel {
   }
 
   public set name(value: string) {
-    this._name = Parser.GetValidString(value, 'Name');
+    this._name = Validator.GetValidString(value, 'Name');
   }
 
   public get icon(): string {
@@ -19,7 +19,7 @@ export class CategoryModel {
   }
 
   public set icon(value: string) {
-    this._icon = Parser.GetValidString(value, 'Icon', 3, 50);
+    this._icon = Validator.GetValidString(value, 'Icon', 3, 50);
   }
 
   constructor(settings: CategoryDataResponse) {
