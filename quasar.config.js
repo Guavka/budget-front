@@ -135,7 +135,7 @@ module.exports = configure((/* ctx */) => ({
         extensions: ['vue'],
         // allow auto import and register components used in markdown
         include: [/\.vue$/, /\.vue\?vue/],
-        dirs: ['src/modules/widgets/', 'src/layouts/**/widgets/'],
+        dirs: ['src/modules/widgets/', 'src/layouts/'],
         deep: true,
         dts: path.resolve(autoImportPath, 'components.d.ts'),
       }],
