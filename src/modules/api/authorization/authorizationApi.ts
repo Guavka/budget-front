@@ -1,9 +1,11 @@
 import { postRequest } from 'boot/axios';
-import { UserParams } from './authorizationsSettings';
+import { UserAuthData } from './models/authSettings';
+import { TokenModel } from './models/tokenModel';
 
 export default class AuthorizationApi {
-  public static async getUserData(settings: UserParams): Promise<string> {
+  public static async postRegistration(settings: UserAuthData): Promise<TokenModel> {
     return postRequest({ params: settings })
-      .catch((e) => { throw new Error(`authorization api getUserData\n${e}`); });
+      .then((result) => new TokenModel(result))
+      .catch((e) => { throw new Error(`Registration api request\n${e}`); });
   }
 }

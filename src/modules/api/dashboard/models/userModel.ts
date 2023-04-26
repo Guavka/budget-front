@@ -1,5 +1,5 @@
 import Validator from 'modules/utils/validator';
-import { PlanDataResponse, ScoreDataResponse, UserDataResponse } from '../dashResponse';
+import { PlanResponse, ScoreResponse, UserResponse } from './dashResponse';
 import { ScoreModel } from './scoreModel';
 import { PlanModel } from './planModel';
 
@@ -30,7 +30,7 @@ export class UserModel {
     return this._plan;
   }
 
-  public set plan(value: PlanDataResponse) {
+  public set plan(value: PlanResponse) {
     this._plan = new PlanModel(value);
   }
 
@@ -63,14 +63,14 @@ export class UserModel {
   }
 
   public set email(value: string) {
-    this._email = Validator.GetValidEmailStr(value, 'Email');
+    this._email = Validator.GetValidEmail(value, 'Email');
   }
 
   public get scores(): ScoreModel[] {
     return this._scores;
   }
 
-  public set scores(value: ScoreDataResponse[]) {
+  public set scores(value: ScoreResponse[]) {
     const result: ScoreModel[] = [];
     this._scores = value.reduce((acc, el) => {
       acc.push(new ScoreModel(el));
@@ -78,7 +78,7 @@ export class UserModel {
     }, result);
   }
 
-  constructor(settings: UserDataResponse) {
+  constructor(settings: UserResponse) {
     try {
       this.id = settings.id;
       this.plan = settings.plan;

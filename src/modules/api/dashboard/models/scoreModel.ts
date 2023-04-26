@@ -1,5 +1,5 @@
 import Validator from 'modules/utils/validator';
-import { OperationDataResponse, ScoreDataResponse } from '../dashResponse';
+import { OperationResponse, ScoreResponse } from './dashResponse';
 import { CurrencyType, ScoreType } from '.';
 import { OperationModel } from './operationModel';
 
@@ -50,7 +50,7 @@ export class ScoreModel {
     return this._operations;
   }
 
-  public set operations(value: OperationDataResponse[]) {
+  public set operations(value: OperationResponse[]) {
     const result: OperationModel[] = [];
     this._operations = value.reduce((acc, el) => {
       acc.push(new OperationModel(el));
@@ -58,7 +58,7 @@ export class ScoreModel {
     }, result);
   }
 
-  constructor(settings: ScoreDataResponse) {
+  constructor(settings: ScoreResponse) {
     try {
       this.name = settings.name;
       this.type = settings.type;

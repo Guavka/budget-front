@@ -1,5 +1,5 @@
 import Validator from 'modules/utils/validator';
-import { CategoryDataResponse, OperationDataResponse } from '../dashResponse';
+import { CategoryResponse, OperationResponse } from './dashResponse';
 import { CategoryModel } from './categoryModel';
 import { OperationType } from '.';
 
@@ -30,7 +30,7 @@ export class OperationModel {
     return this._category;
   }
 
-  public set category(value: CategoryDataResponse) {
+  public set category(value: CategoryResponse) {
     this._category = new CategoryModel(value);
   }
 
@@ -74,7 +74,7 @@ export class OperationModel {
     this._comment = Validator.GetValidString(value, 'Comment');
   }
 
-  constructor(settings: OperationDataResponse) {
+  constructor(settings: OperationResponse) {
     try {
       this.scoreId = settings.scoreId;
       this.category = settings.category;

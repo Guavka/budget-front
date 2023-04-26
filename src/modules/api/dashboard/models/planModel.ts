@@ -1,5 +1,5 @@
 import Validator from 'modules/utils/validator';
-import { PlanDataResponse } from '../dashResponse';
+import { PlanResponse } from './dashResponse';
 
 export class PlanModel {
   protected _name!: string;
@@ -32,7 +32,7 @@ export class PlanModel {
     this._cost = Validator.GetValidPositiveFloat(value, 'Cost');
   }
 
-  constructor(settings: PlanDataResponse) {
+  constructor(settings: PlanResponse) {
     try {
       this.name = settings.name;
       this.duration = settings.duration;

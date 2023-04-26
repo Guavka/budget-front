@@ -16,6 +16,9 @@
       ],
       "boot/*": [
         "src/boot/*"
+      ],
+      "stores/*":[
+        "src/stores/*"
       ]
     }
   },

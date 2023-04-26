@@ -1,5 +1,5 @@
 import Validator from 'modules/utils/validator';
-import { CategoryDataResponse } from '../dashResponse';
+import { CategoryResponse } from './dashResponse';
 
 export class CategoryModel {
   protected _name!: string;
@@ -22,7 +22,7 @@ export class CategoryModel {
     this._icon = Validator.GetValidString(value, 'Icon', 3, 50);
   }
 
-  constructor(settings: CategoryDataResponse) {
+  constructor(settings: CategoryResponse) {
     try {
       this.name = settings.name;
       this.icon = settings.icon;

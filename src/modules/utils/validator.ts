@@ -24,7 +24,7 @@ export default class Validator {
   }
 
   public static GetValidNumber(value: string, message: string): number {
-    return Validator.validate<number>(value, message, () => Number.parseInt(value, 10));
+    return Validator.validate<number>(value, message, () => Number.parseFloat(value));
   }
 
   public static GetValidDate(value: string, message: string): Date {
@@ -42,10 +42,18 @@ export default class Validator {
     });
   }
 
-  public static GetValidPositiveInt(value: string, message: string): number {
-    return Validator.validate<number>(value, message, () => {
-      const clearValue = value.replace(/[&\\/\\#,+()$~%.'":*?<>{}^A-Za-z]/g, '');
-      return Number.parseInt(clearValue, 10);
+  public static GetValidInt(value: number, message: string): number {
+    return Validator.validate<number>(value.toString(), message, () => {
+      if (!Number.isInteger(value)) throw new Error('value not is integer');
+      return value;
+    });
+  }
+
+  public static GetValidPositiveInt(value: number, message: string): number {
+    return Validator.validate<number>(value.toString(), message, () => {
+      if (value < 0) throw new Error('value < 0');
+      if (!Number.isInteger(value)) throw new Error('value not is integer');
+      return value;
     });
   }
 
@@ -56,11 +64,30 @@ export default class Validator {
     });
   }
 
-  public static GetValidEmailStr(value: string, message: string): string {
+  public static GetValidEmail(value: string, message: string): string {
     return Validator.validate<string>(value, message, () => {
       const re = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
       if (re.test(value)) { return value; }
       throw new Error('Email incorrect');
+    });
+  }
+
+  public static GetValidPassword(value: string, message: string, minLength: number, maxLength: number, isNumbers = true, isRegisterSens = true, isLetters = true): string {
+    return Validator.validate<string>(value, message, () => {
+      let rule = '^';
+      if (isNumbers) { rule += '(?=.*[0-9])'; }
+
+      if (isLetters) {
+        if (isRegisterSens) {
+          rule += '(?=.*[a-z])(?=.*[A-Z])';
+        } else {
+          rule += '?=.*[a-zA-Z]';
+        }
+      }
+      rule += `(?=.*_)(?!.* ).+{${minLength},${maxLength}}$`;
+
+      if (new RegExp(rule).test(value)) { return value; }
+      throw new Error('Password not valid');
     });
   }
 }

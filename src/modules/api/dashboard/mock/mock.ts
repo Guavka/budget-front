@@ -1,18 +1,18 @@
 import {
-  CategoryDataResponse, OperationDataResponse, ScoreDataResponse, PlanDataResponse, UserDataResponse,
-} from '../types/dashResponse';
+  CategoryResponse, OperationResponse, ScoreResponse, PlanResponse, UserResponse,
+} from '../models/dashResponse';
 
-const salaryCategory: CategoryDataResponse = {
+const salaryCategory: CategoryResponse = {
   icon: 'mdi-cash-100',
   name: 'Salary',
 };
 
-const healthCategory: CategoryDataResponse = {
+const healthCategory: CategoryResponse = {
   icon: 'mdi-bottle-tonic-plus',
   name: 'Health',
 };
 
-export const operation1: OperationDataResponse = {
+export const operation1: OperationResponse = {
   category: salaryCategory,
   comment: '',
   date: '21.04.2022',
@@ -22,7 +22,7 @@ export const operation1: OperationDataResponse = {
   scoreId: '0',
 };
 
-export const operation2: OperationDataResponse = {
+export const operation2: OperationResponse = {
   category: healthCategory,
   comment: '',
   date: '22.04.2022',
@@ -32,7 +32,7 @@ export const operation2: OperationDataResponse = {
   scoreId: '0',
 };
 
-export const scoresMock: ScoreDataResponse[] = [
+export const scoresMock: ScoreResponse[] = [
   {
     currency: 'RUB',
     moneyValue: '0',
@@ -51,13 +51,13 @@ export const scoresMock: ScoreDataResponse[] = [
     operations: [],
   }];
 
-export const planMock: PlanDataResponse = {
+export const planMock: PlanResponse = {
   duration: '-1',
   name: 'Base',
   cost: '0',
 };
 
-export const userMock: UserDataResponse = {
+export const userMock: UserResponse = {
   id: '2',
   age: '29',
   email: 'guavka@gmail.com',

@@ -1,11 +1,11 @@
-export interface CategoryDataResponse {
+export interface CategoryResponse {
   name: string,
   icon: string
 }
 
-export interface OperationDataResponse {
+export interface OperationResponse {
   scoreId: string,
-  category: CategoryDataResponse,
+  category: CategoryResponse,
   type: string,
   moneyValue: string,
   date: string,
@@ -13,26 +13,26 @@ export interface OperationDataResponse {
   comment: string,
 }
 
-export interface ScoreDataResponse {
+export interface ScoreResponse {
   name: string,
   type: string,
   currency: string,
   moneyValue: string,
-  operations: OperationDataResponse[]
+  operations: OperationResponse[]
 }
 
-export interface PlanDataResponse {
+export interface PlanResponse {
   name: string,
   duration: string,
   cost: string
 }
 
-export interface UserDataResponse {
+export interface UserResponse {
   id: string,
-  plan: PlanDataResponse,
+  plan: PlanResponse,
   firstName: string,
   lastName: string,
   age: string,
   email: string,
-  scores: ScoreDataResponse[]
+  scores: ScoreResponse[]
 }

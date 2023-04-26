@@ -7,16 +7,27 @@
 </template>
 
 <script setup lang="ts">
-import { useUserStore } from '../stores/userStore';
+import { authMock } from 'modules/api/authorization/mock/authMock';
+import { UserAuthData } from 'modules/api/authorization/models/authSettings';
+import { useTokenStore } from 'stores/authStore';
 
-const store = useUserStore();
-console.log(store.getUserData('123', '123'));
+const store = useTokenStore();
+const isMock = import.meta.env.VITE_IS_MOCK;
+let userInput: UserAuthData = authMock;
 
+if (!isMock) {
+  userInput = { email: 'sdfsdf@sfdsfsdf.com', password: '12345' };
+}
+store.registration(userInput)
+  .then((result) => console.log(result))
+  .catch((e) => console.error(e));
 </script>
 
 <style scoped lang="scss">
 .main {
-  height: 100svh;
-  overflow-y: scroll;
+  .main {
+    height: 100svh;
+    overflow-y: scroll;
+  }
 }
 </style>

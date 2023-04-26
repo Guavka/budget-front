@@ -5,6 +5,9 @@ interface ImportMetaEnv {
   readonly VITE_TITLE: string
   readonly VITE_SHORT_TITLE: string
   readonly VITE_IS_MOCK: boolean
+  readonly VITE_TOKEN_LENGTH: number
+  readonly VITE_MIN_PASS_LEN: number
+  readonly VITE_MAX_PASS_LEN: number
 }
 
 interface ImportMeta {

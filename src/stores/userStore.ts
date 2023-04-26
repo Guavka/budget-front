@@ -1,24 +1,16 @@
-import MoneyDashboardApi from 'modules/api/dashboard/dashBoardApi';
-import MockMoneyDashboardApi from 'modules/api/dashboard/dashBoardMockApi';
-import { UserModel } from 'modules/api/dashboard/types/models/userModel';
+import MoneyDashboardApi from 'modules/api/dashboard/dashboardApi';
+import MockMoneyDashboardApi from 'modules/api/dashboard/dashboardMockApi';
+import { UserModel } from 'modules/api/dashboard/models/userModel';
 
-const stateData = {
-  userData: <UserModel>{},
-  isMock: import.meta.env.VITE_IS_MOCK,
-};
+const dashboardApi = !import.meta.env.VITE_IS_MOCK ? MoneyDashboardApi : MockMoneyDashboardApi;
 
 export const useUserStore = defineStore('user', {
-  state: () => stateData,
+  state: () => <UserModel>{},
   getters: {
-    getScores: (state) => state.userData.scores,
   },
   actions: {
     async getUserData(email: string, password: string) {
-      if (this.isMock) {
-        this.userData = await MockMoneyDashboardApi.getUserData({ email, password });
-      } else {
-        this.userData = await MoneyDashboardApi.getUserData({ email, password });
-      }
+      await dashboardApi.getUserData({ email, password });
     },
   },
 });
